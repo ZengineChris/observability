@@ -35,6 +35,7 @@ releases:
   - name: alloy
     namespace: grafana-stack
     chart: grafana/alloy
+    version: 0.5.1
     values:
       - ./values/alloy.values.yaml
     set:
@@ -42,16 +43,19 @@ releases:
         file: ./values/config.alloy
   - name: tempo
     namespace: grafana-stack
+    version: 1.10.1
     chart: grafana/tempo
     values:
       - ./values/tempo.values.yaml
   - name: pyroscope
     namespace: grafana-stack
+    version: 1.7.1
     chart: grafana/pyroscope
     values:
       - ./values/pyroscope.values.yaml
   - name: prometheus
     namespace: grafana-stack
+    version: 25.24.2
     chart: prometheus-community/prometheus
     values:
       - ./values/prometheus.values.yaml
