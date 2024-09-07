@@ -35,7 +35,7 @@ releases:
   - name: alloy
     namespace: grafana-stack
     chart: grafana/alloy
-    version: 0.5.1
+    version: 0.7.0
     values:
       - ./values/alloy.values.yaml
     set:
