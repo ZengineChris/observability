@@ -1,0 +1,32 @@
+{
+    "baseBranches": [
+        "main"
+    ],
+    "rebaseWhen": "conflicted",
+    "labels": [
+        "dependencies"
+    ],
+    "automergeStrategy": "merge-commit",
+    "ignoreTests": true,
+    "packageRules": [
+        {
+            "matchManagers": [
+                "github-actions"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true
+        },
+        {
+            "registryAliases": {
+                "stable": "https://charts.helm.sh/stable"
+            },
+            "commitMessageTopic": "helm chart {{depName}}",
+            "fileMatch": [
+                "(^|/)helmfile\\.ya?ml(?:\\.gotmpl)?$"
+            ]
+        }
+    ]
+}

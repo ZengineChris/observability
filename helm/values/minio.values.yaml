@@ -15,12 +15,18 @@
 #    accessKey: minio
 #    secretKey: minio123
 #
-secrets:
-  name: minio-env-configuration
-  accessKey: minio 
-  secretKey: minio123
+#secrets:
+#  name: minio-env-configuration
+#  accessKey: minio 
+#  secretKey: minio123
 # Root key for MinIO Tenant Chart
 tenant:
+
+  configSecret:
+    name: minio-env-configuration
+    accessKey: minio 
+    secretKey: minio123
+
   ###
   # The Tenant name
   #
