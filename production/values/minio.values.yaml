@@ -92,7 +92,7 @@ tenant:
       volumesPerServer: 4
       ###
       # The capacity per volume requested per MinIO Tenant Pod.
-      size: 10Gi
+      size: 30Gi
       ###
       # The `storageClass <https://kubernetes.io/docs/concepts/storage/storage-classes/>`__ to associate with volumes generated for this pool.
       #
@@ -221,8 +221,11 @@ tenant:
   # MinIO features to enable or disable in the MinIO Tenant
   # See `Operator CRD: Features <https://min.io/docs/minio/kubernetes/upstream/reference/operator-crd.html#features>`__.
   features:
-    bucketDNS: false
-    domains: { }
+    bucketDNS: true
+    domains:
+      minio: 
+       - "https://minio.home"
+      console: "https://minio-console.home"
     enableSFTP: false
   ###
   # Array of objects describing one or more buckets to create during tenant provisioning.

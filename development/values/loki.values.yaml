@@ -1,0 +1,53 @@
+
+deploymentMode: SingleBinary<->SimpleScalable
+
+loki:
+  commonConfig:
+    path_prefix: /var/loki
+    replication_factor: 1
+  auth_enabled: false
+  schemaConfig:
+    configs:
+      - from: 2024-04-01
+        store: tsdb
+        object_store: filesystem
+        schema: v13
+        index:
+          prefix: loki_index_
+          period: 24h
+
+  storage:
+    type: filesystem
+    filesystem:
+      chunks_directory: /var/loki/chunks
+      rules_directory: /var/loki/rules
+      admin_api_directory: /var/loki/admin
+
+singleBinary:
+  replicas: 1
+write: 
+  replicas: 1
+read: 
+  replicas: 1
+backend: 
+  replicas: 1
+
+gateway: 
+  enabled: true
+  ingress:
+    ingressClassName: nginx-internal
+    annotations: 
+      kubernetes.io/ingress.class: nginx-internal
+    # -- Specifies whether an ingress for the gateway should be created
+    enabled: true
+    # -- Ingress Class Name. MAY be required for Kubernetes versions >= 1.18
+    labels: {}
+    pathType: Prefix
+    # -- Hosts configuration for the gateway ingress, passed through the `tpl` function to allow templating
+    hosts:
+      - host: gateway.home
+        paths:
+          - path: /
+            # -- pathType (e.g. ImplementationSpecific, Prefix, .. etc.) might also be required by some Ingress Controllers
+            pathType: Prefix
+    tls: []

@@ -1,25 +1,10 @@
 repositories:
   - name: grafana
     url: https://grafana.github.io/helm-charts
-  - name: minio-operator
-    url: https://operator.min.io
   - name: prometheus-community
     url: https://prometheus-community.github.io/helm-charts
 
 releases:
-  # S3 Storage 
-  - name: minio-operator
-    namespace: minio-operator
-    chart: minio-operator/operator
-    version: 6.0.4
-    #values:
-      #   - ./values/minio.values.yaml
-  - name: minio-grafana
-    namespace: minio
-    chart: minio-operator/tenant
-    version: 6.0.4
-    values:
-     - ./values/minio.values.yaml
   - name: loki
     namespace: grafana-stack
     chart: grafana/loki
