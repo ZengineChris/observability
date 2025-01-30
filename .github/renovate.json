@@ -25,7 +25,9 @@
             },
             "commitMessageTopic": "helm chart {{depName}}",
             "fileMatch": [
-                "(^|/)helmfile\\.ya?ml(?:\\.gotmpl)?$"
+                "(^|/)development/helmfile\\.ya?ml(?:\\.gotmpl)?$",
+                "(^|/)production/helmfile\\.ya?ml(?:\\.gotmpl)?$",
+                "(^|/)remote/helmfile\\.ya?ml(?:\\.gotmpl)?$"
             ]
         }
     ]
