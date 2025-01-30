@@ -11,7 +11,7 @@ releases:
   - name: minio-operator
     namespace: minio-operator
     chart: minio-operator/operator
-    version: 6.0.4
+    version: 7.0.0
     #values:
       #   - ./values/minio.values.yaml
   - name: minio-grafana
