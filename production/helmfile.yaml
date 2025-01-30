@@ -17,7 +17,7 @@ releases:
   - name: minio-grafana
     namespace: minio
     chart: minio-operator/tenant
-    version: 6.0.4
+    version: 7.0.0
     values:
      - ./values/minio.values.yaml
   - name: loki
