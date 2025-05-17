@@ -34,7 +34,7 @@ jobs:
           installation_id: ${{ secrets.DEMO_RENOVATE_INSTALL_ID }}
           private_key: ${{ secrets.DEMO_RENOVATE_PRIVATE_KEY }}
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@02f4fdeb479bbb229caa7ad82cb5e691c07e80b3 # v41.0.14
+        uses: renovatebot/github-action@f5c3383cb7cbf7711d8b66b809375b2d5f4e2d1d # v42.0.2
         env:
           # Repository taken from variable to keep configuration file generic
           RENOVATE_REPOSITORIES: ${{ github.repository }}
