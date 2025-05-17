@@ -28,7 +28,7 @@ releases:
         file: ./values/config.alloy
   - name: tempo
     namespace: grafana-stack
-    version: 1.18.2
+    version: 1.21.1
     chart: grafana/tempo
     values:
       - ./values/tempo.values.yaml
