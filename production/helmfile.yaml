@@ -55,7 +55,7 @@ releases:
       - ./values/pyroscope.values.yaml
   - name: prometheus
     namespace: grafana-stack
-    version: 27.16.0
+    version: 27.23.0
     chart: prometheus-community/prometheus
     values:
       - ./values/prometheus.values.yaml
