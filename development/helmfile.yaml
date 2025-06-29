@@ -34,7 +34,7 @@ releases:
       - ./values/tempo.values.yaml
   - name: pyroscope
     namespace: grafana-stack
-    version: 1.13.4
+    version: 1.14.0
     chart: grafana/pyroscope
     values:
       - ./values/pyroscope.values.yaml
